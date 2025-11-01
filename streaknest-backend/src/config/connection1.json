@@ -1,0 +1,12 @@
+{   
+   
+    "local":{ 
+        "username": "jahirmashal91_db_user",
+        "password":"tH2cQrTk6MsoaKrR" ,
+        "name": "dev1streaknest",
+        "host": "streaknestcluster.5dystfw.mongodb.net",
+        "port": "27017"
+    }
+
+    
+}
