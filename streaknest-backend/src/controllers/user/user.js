@@ -105,7 +105,7 @@ exports.login = async function (req, res) {
 
       return requestHandler(
         codes("USER_LOGIN"),
-        `User login successful`,
+        `user login successful`,
         codes("USER_LOGIN_ERROR"),
         `User login failed `,
         data,

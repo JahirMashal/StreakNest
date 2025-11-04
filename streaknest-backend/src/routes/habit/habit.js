@@ -12,6 +12,9 @@ router.put("/update", habit.updateHabit);
 // Get all habits for a user
 router.get("/get", habit.getAllHabits);
 
+// Mark as completed and mentained streaks
+router.put("/mark-completed", habit.markHabitAsCompleted);
+
 // Delete a habit
 router.delete("/delete", habit.deleteHabit);
 

@@ -1,8 +1,8 @@
 "use strict";
-const jwt = require("../jwt/index");
-const { encryptPwd } = require("../setters/index");
-const user = require("../models/user"); // Assuming Mongoose model
-const query = require("../queries/user");
+const jwt = require("./jwt/index");
+const { encryptPwd } = require("./setters/index");
+const user = require("./models/user"); // Assuming Mongoose model
+const query = require("./queries/user");
 
 /**
  * Custom JWT-based Login Logic
@@ -45,8 +45,7 @@ exports.login = async function (req, res) {
       id: existingUser.userId || existingUser._id,
       emailId: existingUser.emailId,
       userName: existingUser.userName,
-      phone: existingUser.phone,
-      category: existingUser.category,
+      phone: existingUser.phone
     };
 
     
@@ -64,7 +63,6 @@ exports.login = async function (req, res) {
 
     
     return res.status(200).json({
-      success: true,
       message: "User login successful.",
       token,
       user: {
@@ -72,7 +70,6 @@ exports.login = async function (req, res) {
         emailId: existingUser.emailId,
         userName: existingUser.userName,
         phone: existingUser.phone,
-        category: existingUser.category,
       },
     });
   } catch (err) {

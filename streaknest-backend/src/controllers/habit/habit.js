@@ -170,6 +170,36 @@ exports.getAllHabits = function (req, res) {
   }
 };
 
+
+exports.markHabitAsCompleted = async (req, res) => {
+  try {
+    const { habitId } = req.query;
+
+    if (!habitId) {
+      return res.status(400).json({
+        error: "Validation error: habitId is required",
+      });
+    }
+
+    habit.markHabitAsCompleted(habitId, function (err, data) {
+      requestHandler(
+        codes("HABIT_MARK_COMPLETED"),
+        `Habit marked as completed successfully: ${habitId}`,
+        codes("HABIT_MARK_COMPLETED_ERROR"),
+        `Habit marking failed: ${habitId}`,
+        data,
+        res,
+        err
+      );
+    });
+  } catch (error) {
+    console.error("Error marking habit as completed:", error);
+    requestFailedHandler(req, res);
+  }
+};
+
+
+
 exports.deleteHabit = async (req, res) => {
   try {
     const { habitId } = req.query;
@@ -194,3 +224,4 @@ exports.deleteHabit = async (req, res) => {
     requestFailedHandler(req, res);
   }
 };
+

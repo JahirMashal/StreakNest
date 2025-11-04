@@ -1,25 +1,59 @@
 "use strict";
 const query2 = require("./queries/habit");
-// const jwt = require("./jwt/index");
-// const { emailSender } = require("./email/index");
+
 
 
 // CREATE
-exports.createHabit = (details, callback) => {
-  query2.createHabit(details, callback);
+exports.createHabit = function (details, callback) {
+  query2.createHabit(details, function (err, res) {
+    if (err) {
+      return callback(err);
+    } else {
+      return callback(null, res);
+    }
+  });
 };
 
-// UPDATE
-exports.updateHabit = (habitId, update, callback) => {
-  query2.updateHabit(habitId, update, callback);
+// UPDATE (user can update habit details only those in body)
+exports.updateHabit = function (habitId, update, callback) {
+  query2.updateHabit(habitId, update, function (err, res) {
+    if (err) {
+      return callback(err);
+    } else {
+      return callback(null, res);
+    }
+  });
 };
 
-// GET ALL
-exports.getAllHabits = (userId, callback) => {
-  query2.getAllHabits(userId, callback);
+// GET ALL (it we show how many habits have active)
+exports.getAllHabits = function (userId, callback) {
+  query2.getAllHabits(userId, function (err, res) {
+    if (err) {
+      return callback(err);
+    } else {
+      return callback(null, res);
+    }
+  });
+};
+
+//  MARK AS COMPLETED
+exports.markHabitAsCompleted = function (habitId, callback) {
+  query2.markHabitAsCompleted(habitId, function (err, res) {
+    if (err) {
+      return callback(err);
+    } else {
+      return callback(null, res);
+    }
+  });
 };
 
 // DELETE
-exports.deleteHabit = (habitId, callback) => {
-  query2.deleteHabit(habitId, callback);
+exports.deleteHabit = function (habitId, callback) {
+  query2.deleteHabit(habitId, function (err, res) {
+    if (err) {
+      return callback(err);
+    } else {
+      return callback(null, res);
+    }
+  });
 };

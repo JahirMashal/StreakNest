@@ -30,21 +30,21 @@ exports.emailSender = async function (
       from: `StreakNest <${senderEmail}>`,
       to: clientEmail,
       subject: emailSubject,
-      text: emailData, // plain text fallback
-      html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.5;">
-          <h2 style="color: #4CAF50;">StreakNest Password Reset</h2>
-          <p>Hello 👋,</p>
-          <p>You requested to reset your password. Click the button below to reset it:</p>
-          <p>
-            <a href="${emailData}" 
-               style="background-color:#4CAF50;color:#fff;padding:10px 20px;
-                      text-decoration:none;border-radius:5px;">Reset Password</a>
-          </p>
-          <p><b>Note:</b> This link expires in 5 minutes.</p>
-          <p>If you didn’t request this, please ignore this email.</p>
-        </div>
-      `,
+      text: emailData,
+      // html: `
+      //   <div style="font-family: Arial, sans-serif; line-height: 1.5;">
+      //     <h2 style="color: #4CAF50;">StreakNest Password Reset</h2>
+      //     <p>Hello 👋,</p>
+      //     <p>You requested to reset your password. Click the button below to reset it:</p>
+      //     <p>
+      //       <a href="${emailData}" 
+      //          style="background-color:#4CAF50;color:#fff;padding:10px 20px;
+      //                 text-decoration:none;border-radius:5px;">Reset Password</a>
+      //     </p>
+      //     <p><b>Note:</b> This link expires in 5 minutes.</p>
+      //     <p>If you didn’t request this, please ignore this email.</p>
+      //   </div>
+      // `,
     };
 
     //  Send email
