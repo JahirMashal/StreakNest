@@ -20,9 +20,7 @@ exports.register = async function (req, res, next) {
       phone 
     } = req.body;
 
-    // if (!userId || !emailId || !password || !userName) {
-    //   return res.status(400).json({ message: "Missing required fields" });
-    // }
+
 
  const existingUser = await user.findByAnyField({
       emailId,
@@ -123,46 +121,6 @@ exports.login = async function (req, res) {
 /**
  *  Stateless JWT Logout
  */
-
-// exports.logout = async function (req, res) {
-//   try {
-//     const authHeader = req.headers.authorization;
-
-//     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-//       return res.status(401).json({
-//         success: false,
-//         message: "Access denied. No token provided.",
-//       });
-//     }
-
-//     const token = authHeader.split(" ")[1];
-
-//     user.logout(token, (err, data) => {
-//       if (err) {
-//         console.error("Logout Error:", err);
-//         return res.status(500).json({
-//           success: false,
-//           message: "Logout failed",
-//           error: err,
-//         });
-//       }
-
-//       // Stateless logout → client just needs to delete token on their end
-//       return res.status(200).json({
-//         success: true,
-//         message: "User logged out successfully",
-//         data,
-//       });
-//     });
-//   } catch (error) {
-//     console.error("Logout Exception:", error);
-//     return res.status(500).json({
-//       success: false,
-//       message: "Internal server error during logout",
-//     });
-//   }
-// };
-
 
 exports.logout = function (req, res) {
   try {

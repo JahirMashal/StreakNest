@@ -16097,3 +16097,12 @@ streaknest-backend/package-lock.json
 streaknest-backend/.env
 
 streaknest-backend/src/Schedular/sms.js
+streaknest-frontend/postcss.config.js
+streaknest-frontend/.env
+streaknest-frontend/.gitignore
+streaknest-frontend/README.md
+streaknest-frontend/public/vite.svg
+streaknest-backend/src/config/utils.js
+
+s t r e a k n e s t - b a c k e n d / . e n v  
+ 

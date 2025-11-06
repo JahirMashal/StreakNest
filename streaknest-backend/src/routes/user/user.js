@@ -33,6 +33,6 @@ router.get("/forgot-password", user.forgotPassword);
 //  Reset Password — Validate token and update password
 router.post("/reset-password/:id/:token", user.resetPassword);
 // Logout
-router.post("/logout", verifyJwt, user.logout);
+router.post("/logout", user.logout);
 
 module.exports = router;

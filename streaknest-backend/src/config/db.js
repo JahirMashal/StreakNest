@@ -1,13 +1,12 @@
 "use strict";
 const mongoose = require("mongoose");
-const utils = require("../config/utils");
-// const { mongoAddress } = require("../config/utils");
+const utils = require("../config/utils"); ///your utils file contain mongodb url
 
 const connectDB = {
   connection1: {
     type: "mongo",
-    creds: utils.mongoAddress(), // your full MongoDB connection string
-    // creds: utils.mongoAddress(console.log(" MongoDB Connected Successfully!")), // your full MongoDB connection string
+    creds: utils.mongoAddress(), //add your mongodb url on mongoAddress()
+    
   },
 };
 
@@ -25,22 +24,8 @@ module.exports = function (name) {
 
   if (config.type === "mongo") {
     const connection = mongoose.createConnection(config.creds, {
-      // useNewUrlParser: false,
-      // useUnifiedTopology: false,
+
     });
-
-    //  Connection events
-    // connection.on('connected', () => {
-    //   console.log(` MongoDB Connected: ${name}`);
-    // });
-
-    // connection.on('error', (error) => {
-    //   console.error(` MongoDB Error (${name}):`, error.message);
-    // });
-
-    // connection.on('disconnected', () => {
-    //   console.warn(` MongoDB Disconnected: ${name}`);
-    // });
 
     return connection;
   } else {
@@ -49,4 +34,4 @@ module.exports = function (name) {
 };
 
 
-// console.log(utils.mongoAddress());
+

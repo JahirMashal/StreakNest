@@ -57,34 +57,3 @@ exports.emailSender = async function (
   }
 };
 
-
-
-
-
-// const nodemailer=require('nodemailer');
-
-// exports.emailSender = async function(senderEmail,password,clientEmail,emailSubject,emailData){
-//     var transporter = nodemailer.createTransport({
-//         service: 'gmail',
-//         auth: {
-//           user: senderEmail,
-//           pass: password
-//         }
-//       });
-      
-//       var mailOptions = {
-//         from: senderEmail,
-//         to: clientEmail,
-//         subject: emailSubject,
-//         text: emailData
-//       };
-      
-//       transporter.sendMail(mailOptions, function(error, info){
-//         if (error) {
-//           // console.log(error);
-//         } else {
-//           console.log('Email sent: ' + info.response);
-//         }
-//       });
-// }
-

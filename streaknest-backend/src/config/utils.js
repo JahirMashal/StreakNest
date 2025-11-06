@@ -7,7 +7,6 @@ return `mongodb+srv://jahirmashal91_db_user:tH2cQrTk6MsoaKrR@streaknestcluster.5
 
 }
 
-// console.log(this.mongoAddress());
 
 exports.mongoAddress2 = function (connection) {
   

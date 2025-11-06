@@ -76,23 +76,5 @@ exports.validate = function (token) {
   }
 };
 
-//for 1h
-// exports.generate1 = (payload, expiresIn = "1h") => {
-//   try {
-//     return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn });
-//   } catch (err) {
-//     console.error("JWT Generate Error:", err);
-//     throw err;
-//   }
-// };
 
-// //for 5m
-// exports.generate2 = (payload, secret, options = { expiresIn: '5m' }) => {
-//   try {
-//     return jwt.sign(payload, secret, options);
-//   } catch (err) {
-//     console.error("JWT Generate2 Error:", err);
-//     throw err;
-//   }
-// };
 
